@@ -1,10 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView } from 'react-native'
+import React, { useLayoutEffect } from 'react'
+import { useNavigation } from '@react-navigation/native';
 
-export default function HomeScreen() {
+const HomeScreen =() => {
+  const navigatin = useNavigation();
+  useLayoutEffect(()=>{
+    navigatin.setOptions({
+      headerShown: false,
+    });
+  },[]) 
   return (
-    <View >
-      <Text className="text-red-500">HomeScreen</Text>
-    </View>
+    <SafeAreaView>
+      
+    </SafeAreaView>
   )
-}
+};
+export default HomeScreen
